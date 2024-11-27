@@ -8,6 +8,7 @@
 #include <ESP32Servo.h>
 // #include "serial.h"
 #define USE_SOFTWARE_SERIAL
+#include <Arduino.h>
 
 #include "CarSerial.h"
 #include "EncoderManager.h"
@@ -135,6 +136,8 @@ void motor_init();
 void setup() {
     // Serial
     delay(1000);
+    Serial.begin(115200);
+    serial_init();
     // serial_init(9600,"Robot_driver_03");
 
     serial_init();
