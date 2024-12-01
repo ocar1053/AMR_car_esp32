@@ -434,12 +434,12 @@ void motor_execute(uint8_t num, int16_t vel) { // 副程式  前進
     }
 
     if (vel > 0) {
-        digitalWrite(motor_p1, LOW);  // control the motor's direction in clockwise
-        digitalWrite(motor_p2, HIGH); // control the motor's direction in clockwise
+        digitalWrite(motor_p1, HIGH);  // control the motor's direction in clockwise
+        digitalWrite(motor_p2, LOW); // control the motor's direction in clockwise
         analogWrite(motor_en, vel);
     } else {
-        digitalWrite(motor_p1, HIGH); // control the motor's direction in clockwise
-        digitalWrite(motor_p2, LOW);  // control the motor's direction in clockwise
+        digitalWrite(motor_p1, LOW); // control the motor's direction in clockwise
+        digitalWrite(motor_p2, HIGH);  // control the motor's direction in clockwise
         analogWrite(motor_en, -vel);
     }
 }
